@@ -33,7 +33,7 @@
                     <h3 class="card-title">My Chill</h3>
                     <div class="card">
                         <div class="app-menu">
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#modalDriver">
                                 <div class="img">
                                     <img src="./assets/ic-procedures.svg" alt="ic app">
                                 </div>
@@ -41,7 +41,7 @@
                             </a>
                         </div>
                         <div class="app-menu">
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#modalWarehouse">
                                 <div class="img">
                                     <img src="./assets/ic-warehouse-procedures.svg" alt="ic app">
                                 </div>
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                         <div class="app-menu">
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#modalKnowledge">
                                 <div class="img">
                                     <img src="./assets/ic-knowledge-bases.svg" alt="ic app">
                                 </div>
@@ -65,7 +65,7 @@
                             </a>
                         </div>
                         <div class="app-menu">
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#modalChain">
                                 <div class="img">
                                     <img src="./assets/ic-chain-of-responsibility.svg" alt="ic app">
                                 </div>
@@ -73,7 +73,7 @@
                             </a>
                         </div>
                         <div class="app-menu">
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#modalForms">
                                 <div class="img">
                                     <img src="./assets/ic-forms.svg" alt="ic app">
                                 </div>
@@ -149,7 +149,7 @@
                         <h3 class="card-title">WHS</h3>
                         <div class="card">
                             <div class="app-menu">
-                                <a href="#">
+                                <a href="#" data-toggle="modal" data-target="#modalAccident">
                                     <div class="img">
                                         <img src="./assets/ic-accident.svg" alt="ic app">
                                     </div>
@@ -165,7 +165,7 @@
                                 </a>
                             </div>
                             <div class="app-menu">
-                                <a href="#">
+                                <a href="#" data-toggle="modal" data-target="#modalHazard">
                                     <div class="img">
                                         <img src="./assets/ic-hazard.svg" alt="ic app">
                                     </div>
@@ -260,7 +260,7 @@
                                 </a>
                             </div>
                             <div class="app-menu">
-                                <a href="#">
+                                <a href="#" data-toggle="modal" data-target="#modalRoadAssist">
                                     <div class="img">
                                         <img src="./assets/ic-road-assistance.svg" alt="ic app">
                                     </div>
@@ -320,9 +320,466 @@
         </div>
     </div>
 
+    <!-- Modals -->
+    <div class="modal fade" id="modalDriver" tabindex="-1" aria-labelledby="modalDriverLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalDriverLabel">Driver Procedures</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <img src="./assets/ic-close.svg" alt="close icon">
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-road-assistance.svg" alt="ic app">
+                        </div>
+                        <p>FAQ’s</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#" data-toggle="modal" data-target="#modalGuides" data-dismiss="modal" aria-label="Close">
+                        <div class="img">
+                            <img src="./assets/ic-breakdown.svg" alt="ic app">
+                        </div>
+                        <p>Guides</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-how-to-video.svg" alt="ic app">
+                        </div>
+                        <p>How to Videos</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGuides" tabindex="-1" aria-labelledby="modalGuidesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button class="back" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#modalDriver">
+                    <img src="./assets/ic-back.svg" alt="icon back">
+                </button>
+                <h5 class="modal-title" id="modalGuidesLabel">
+                    <span>Driver Procedures</span>
+                    <img src="./assets/ic-chevron-right.svg" alt="icon chevron right">
+                    Guides
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-cheat-seat.svg" alt="ic app">
+                        </div>
+                        <p>Driver Cheat Seat</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-procedures.svg" alt="ic app">
+                        </div>
+                        <p>Driver Day</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-driver-manual.svg" alt="ic app">
+                        </div>
+                        <p>Driver Manual</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-safe-work-method.svg" alt="ic app">
+                        </div>
+                        <p>COVID 19</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-labelling.svg" alt="ic app">
+                        </div>
+                        <p>Labelling</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-history.svg" alt="ic app">
+                        </div>
+                        <p>Return Stock</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalWarehouse" tabindex="-1" aria-labelledby="modalWarehouseLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalWarehouseLabel">Warehouse Procedures</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-cheat-seat.svg" alt="ic app">
+                        </div>
+                        <p>Cheat Seat</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-procedures.svg" alt="ic app">
+                        </div>
+                        <p>Driver Day</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-road-assistance.svg" alt="ic app">
+                        </div>
+                        <p>FAQ’s</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-breakdown.svg" alt="ic app">
+                        </div>
+                        <p>SOP’s</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-how-to-video.svg" alt="ic app">
+                        </div>
+                        <p>How To Videos</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalKnowledge" tabindex="-1" aria-labelledby="modalKnowledgeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalKnowledgeLabel">Knowledge Bases</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-carton-cloud.svg" alt="ic app">
+                        </div>
+                        <p>Carton Cloud</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-employment.svg" alt="ic app">
+                        </div>
+                        <p>Employment Hero</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-chill.svg" alt="ic app">
+                        </div>
+                        <p>Chill Knowledge</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-deputy.svg" alt="ic app">
+                        </div>
+                        <p>Deputy</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-fleetsu.svg" alt="ic app">
+                        </div>
+                        <p>Fleetsu</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalChain" tabindex="-1" aria-labelledby="modalChainLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalChainLabel">Chain of Responsibility</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-driver-responsibility.svg" alt="ic app">
+                        </div>
+                        <p>Driver Responsibility</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-warehouse-procedures.svg" alt="ic app">
+                        </div>
+                        <p>Warehouse Responsibility</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-load-distribution.svg" alt="ic app">
+                        </div>
+                        <p>Load Distribution</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalForms" tabindex="-1" aria-labelledby="modalFormsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFormsLabel">Forms</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-accident.svg" alt="ic app">
+                        </div>
+                        <p>Accident</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-product-recall.svg" alt="ic app">
+                        </div>
+                        <p>Product Recall</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-shipping-labels.svg" alt="ic app">
+                        </div>
+                        <p>Shipping Labels</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-forms.svg" alt="ic app">
+                        </div>
+                        <p>Leave Forms</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-expense-form.svg" alt="ic app">
+                        </div>
+                        <p>Expense Form</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAccident" tabindex="-1" aria-labelledby="modalAccidentLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAccidentLabel">Accident</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-driver-manual.svg" alt="ic app">
+                        </div>
+                        <p>What To Do</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-forms.svg" alt="ic app">
+                        </div>
+                        <p>Accident Form</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalHazard" tabindex="-1" aria-labelledby="modalHazardLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalHazardLabel">Hazard</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-chain-of-responsibility.svg" alt="ic app">
+                        </div>
+                        <p>Identification</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#">
+                        <div class="img">
+                            <img src="./assets/ic-inspection-testing.svg" alt="ic app">
+                        </div>
+                        <p>Report</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalRoadAssist" tabindex="-1" aria-labelledby="modalRoadAssistLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalRoadAssistLabel">Road Assistance</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Call HQ first to get advice on next steps</p>
+                <div class="phone-item">
+                    <h3>Chill HQ</h3>
+                    <a href="tel:1300932445" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1300 932 445
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Fuso</h3>
+                    <a href="tel:1300426708" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1300 426 708
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Iveco</h3>
+                    <a href="tel:1800827747" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1800 827 747
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Isuzu</h3>
+                    <a href="tel:1800883883" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1800 883 883
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Mercedes</h3>
+                    <a href="tel:1800807700" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1800 807 700
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Ford</h3>
+                    <a href="tel:1800133673" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1800 133 673
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>NRMA</h3>
+                    <a href="tel:131122" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        13 11 22
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>RACV</h3>
+                    <a href="tel:13 11 11" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        13 11 11
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script>
+        $('.modal').on('show.bs.modal', function (e) {
+            $('body').addClass("modal-open");
+        }).on('hide.bs.modal', function (e) {
+            $('body').removeClass("modal-open");
+        })
+    </script>
 </body>
 </html>

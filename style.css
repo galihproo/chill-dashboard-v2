@@ -3,6 +3,11 @@ html, body {
     background: #F9FAFA;
 }
 
+/* .modal-open .modal-backdrop {
+    background-color: #272F36;
+    opacity: 0.08;
+} */
+
 .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto, .col-left, .col-center .col-right {
     padding-left: 12px;
     padding-right: 12px;
@@ -111,7 +116,8 @@ html, body {
     margin-bottom: 40px;
 }
 
-.content .card .app-menu {
+.content .card .app-menu,
+.modal .app-menu {
     width: 128px;
     height: 128px;
     display: flex;
@@ -120,7 +126,8 @@ html, body {
     justify-content: center;
 }
 
-.content .card .app-menu a {
+.content .card .app-menu a,
+.modal .app-menu a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +135,8 @@ html, body {
     text-decoration: none;
 }
 
-.card .app-menu .img {
+.card .app-menu .img,
+.modal .app-menu .img {
     width: 60px;
     height: 60px;
     margin-bottom: 18px;
@@ -138,13 +146,15 @@ html, body {
     align-items: center;
 }
 
-.card .app-menu .img:hover::after {
+.card .app-menu .img:hover::after,
+.modal .app-menu .img:hover::after {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
 }
 
-.card .app-menu .img::after {
+.card .app-menu .img::after,
+.modal .app-menu .img::after {
     content: '';
     position: absolute;
     opacity: 0;
@@ -160,14 +170,16 @@ html, body {
     transform: scale(.7);
 }
 
-.card .app-menu .img img {
+.card .app-menu .img img,
+.modal .app-menu .img img {
     width: 48px;
     height: 48px;
     position: relative;
     z-index: 2;
 }
 
-.card .app-menu p {
+.card .app-menu p,
+.modal .app-menu p {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
@@ -180,10 +192,113 @@ html, body {
     max-width: 108px;
 }
 
+.modal-content {
+    border-radius: 8px;
+    border: 1px solid #CDD1D5;
+}
+
+.modal-header {
+    padding: 20px 20px 20px 22px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: none;
+    border-bottom: 1px solid #EEEEEE;
+    align-items: center;
+}
+
+.modal-header button {
+    outline: none !important;
+    appearance: none !important;
+}
+
+.modal-header .back {
+    border: none;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 12px;
+    border-right: 1px solid #CDD1D5;
+    margin-right: 12px;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+}
+
+#modalRoadAssist .modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0 36px;
+}
+
+.modal-header .modal-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: #272F36;
+    display: flex;
+    align-items: center;
+}
+
+.modal-header .modal-title span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: #70767D;
+}
+
+.modal-header .modal-title img {
+    margin: 0 4px;
+}
+
+#modalRoadAssist p {
+    margin: 0 0 25px 20px;
+}
+
+#modalRoadAssist .phone-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 20px 0;
+    margin: 0 20px;
+}
+
+.phone-item h3 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    color: #272F36;
+    margin-bottom: 0;
+}
+
+.phone-item .number {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    color: #1EA2ED;
+}
+
+.phone-item .number img {
+    margin-right: 12px;
+}
+
+@media(min-width: 576px) {
+    .modal-dialog {
+        max-width: 456px;
+    }
+}
+
 @media(min-width: 768px) {
-    /* .container {
-        max-width: 820px;
-    } */
     .row-primary {
         flex-direction: column;
     }
@@ -200,22 +315,10 @@ html, body {
     }
 }
 
-/* @media(min-width: 840px) {
-    .container {
-        max-width: 840px;
-    }
-    .col-left .card {
-        justify-content: space-evenly;
-    }
-} */
-
 @media(min-width: 1200px) {
     .container {
         max-width: 1200px;
     }
-    /* .col-right .col-right-inner .card {
-        max-width: 386px;
-    } */
 }
 
 @media(min-width: 1320px) {
@@ -387,5 +490,86 @@ html, body {
     .content .col-right .card {
         background-color: #FFFFFF;
         border: none;
+    }
+    .modal-backrop {
+        background-color: #272F36;
+        opacity: 0.08;
+    }
+    .modal-dialog {
+        margin: 0;
+        align-items: flex-end;
+        height: 100%;
+    }
+    .modal.fade .modal-dialog {
+        transform: none;
+    }
+    .modal,
+    .modal .modal-content {
+        position: fixed;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        width: 100vw;
+        transition: .5s all ease-in-out;
+    }
+    .modal .modal-content {
+        bottom: -100px;
+    }
+    .modal.show,
+    .modal.show .modal-content {
+        opacity: 1;
+        visibility: visible;
+        transition: .5s all ease-in-out;
+    }
+    .modal.show .modal-content {
+        bottom: 0;
+    }
+    .modal-content {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .modal-header .modal-title {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    
+    .modal-header .modal-title span {
+        font-size: 13px;
+        line-height: 15px;
+    }
+}
+
+@media(max-width: 450px) {
+    .card .app-menu .img, 
+    .modal .app-menu .img {
+        width: 54px;
+        height: 54px;
+    }
+    .card .app-menu .img::after, 
+    .modal .app-menu .img::after {
+        width: 54px;
+        height: 54px;
+    }
+    .card .app-menu .img img, 
+    .modal .app-menu .img img {
+        width: 40px;
+        height: 40px;
+    }
+    .card .app-menu p, 
+    .modal .app-menu p {
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
+
+@media(max-width: 430px) {
+    .content .card .app-menu {
+        width: 100px;
+    }
+}
+
+@media(max-width: 340px) {
+    .content .card .app-menu {
+        width: 90px;
     }
 }
