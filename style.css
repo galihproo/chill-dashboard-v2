@@ -230,6 +230,8 @@ html, body {
     display: flex;
     flex-direction: column;
     padding: 25px 0 36px;
+    overflow: auto;
+    justify-content: unset;
 }
 
 .modal-header .modal-title {
@@ -523,6 +525,7 @@ html, body {
     }
     .modal.show .modal-content {
         bottom: 0;
+        max-height: 90%;
     }
     .modal-content {
         border-bottom-left-radius: 0;
