@@ -99,7 +99,7 @@ html, body {
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
     justify-content: space-evenly;
-    padding: 12px 0;
+    padding: 26px 0 20px;
 }
 
 .content .col-left .card {
@@ -123,7 +123,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: unset;
 }
 
 .content .card .app-menu a,
@@ -185,7 +185,6 @@ html, body {
     line-height: 20px;
     text-align: center;
     letter-spacing: 0.01em;
-    text-transform: capitalize;
     color: #70767D;
     margin: 0;
     word-wrap: break-word;
@@ -224,6 +223,13 @@ html, body {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-evenly;
+}
+
+#modalAccident .modal-body,
+#modalHazard .modal-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #modalRoadAssist .modal-body {
