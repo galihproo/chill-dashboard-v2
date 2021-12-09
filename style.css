@@ -146,8 +146,8 @@ html, body {
     align-items: center;
 }
 
-.card .app-menu .img:hover::after,
-.modal .app-menu .img:hover::after {
+.card .app-menu:hover .img::after,
+.modal .app-menu:hover .img::after {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
