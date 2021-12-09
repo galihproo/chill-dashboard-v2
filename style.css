@@ -209,6 +209,7 @@ html, body {
     border: none;
     border-bottom: 1px solid #EEEEEE;
     align-items: center;
+    height: 67px;
 }
 
 .modal-header button {
@@ -223,6 +224,25 @@ html, body {
     padding-right: 12px;
     border-right: 1px solid #CDD1D5;
     margin-right: 12px;
+}
+
+.modal-header .back img {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 24px;
+    height: 24px;
+}
+
+.modal-header .back .hover {
+    display: none;
+}
+
+.modal-header .back:hover .icon {
+    display: none;
+}
+
+.modal-header .back:hover .hover {
+    display: block;
 }
 
 .modal-body {
