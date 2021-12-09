@@ -191,6 +191,12 @@ html, body {
     max-width: 108px;
 }
 
+.card .app-menu:hover p,
+.modal .app-menu:hover p {
+    font-weight: 600;
+    color: #1EA2ED;
+}
+
 .modal-content {
     border-radius: 8px;
     border: 1px solid #CDD1D5;
