@@ -406,6 +406,10 @@ html, body {
     .content .col-center .card {
         grid-template-columns: auto auto auto;
     }
+    .content .card .app-menu,
+    .modal .app-menu {
+        height: 100px;
+    }
 }
 
 @media(max-width: 991px) {
@@ -523,6 +527,11 @@ html, body {
         background-color: #FFFFFF;
         border: none;
     }
+    .content .card .app-menu,
+    .modal .app-menu {
+        width: 128px;
+        height: 128px;
+    }
     .modal-backrop {
         background-color: #272F36;
         opacity: 0.08;
@@ -572,29 +581,6 @@ html, body {
     }
 }
 
-/* @media(max-width: 450px) {
-    .card .app-menu .img, 
-    .modal .app-menu .img {
-        width: 54px;
-        height: 54px;
-    }
-    .card .app-menu .img::after, 
-    .modal .app-menu .img::after {
-        width: 54px;
-        height: 54px;
-    }
-    .card .app-menu .img img, 
-    .modal .app-menu .img img {
-        width: 40px;
-        height: 40px;
-    }
-    .card .app-menu p, 
-    .modal .app-menu p {
-        font-size: 12px;
-        line-height: 17px;
-    }
-} */
-
 @media(max-width: 430px) {
     .content .card .app-menu {
         width: 100px;
@@ -602,7 +588,8 @@ html, body {
 }
 
 @media(max-width: 340px) {
-    .content .card .app-menu {
+    .content .card .app-menu,
+    .modal .app-menu {
         width: 90px;
     }
 }
