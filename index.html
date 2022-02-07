@@ -20,10 +20,16 @@
         <div class="nav-brand">
             <a href="http://www.chill.com.au/" target="_blank">
                 <img src="./assets/logo-chill.svg" alt="logo chill">
-                <h1 class="title-mobile">Chill Operations Dashboard</h1>
+                <h1 class="title-mobile">
+                    Chill Operations Dashboard
+                </h1>
             </a>
         </div>
-        <h1 class="title-desktop">Chill Operations Dashboard</h1>
+        <h1 class="title-desktop">
+            <img src="./assets/ic-procedures.svg" alt="ic app" class="ic-1">
+                Chill Operations Dashboard
+            <img src="./assets/ic-warehouse-procedures.svg" alt="ic app" class="ic-2">
+        </h1>
         <div class="btn-logout">LOGOUT</div>
     </div>
 
@@ -190,7 +196,7 @@
                                 </a>
                             </div>
                             <div class="app-menu">
-                                <a href="https://app.safetyculture.io/login" target="_blank">
+                                <a href="#" data-toggle="modal" data-target="#modalInjury">
                                     <div class="img">
                                         <img src="./assets/ic-report.svg" alt="ic app">
                                     </div>
@@ -467,7 +473,7 @@
                     </a>
                 </div>
                 <div class="app-menu">
-                    <a href="#">
+                    <a href="#" data-toggle="modal" data-target="#modalGuides2" data-dismiss="modal" aria-label="Close">
                         <div class="img">
                             <img src="./assets/ic-guides.svg" alt="ic app">
                         </div>
@@ -488,6 +494,45 @@
                             <img src="./assets/ic-sop.svg" alt="ic app">
                         </div>
                         <p>SOP’s</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGuides2" tabindex="-1" aria-labelledby="modalGuides2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button class="back" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#modalWarehouse">
+                    <img class="icon" src="./assets/ic-back.svg" alt="icon back">
+                    <img class="hover" src="./assets/ic-back-hover.svg" alt="icon back hover">
+                </button>
+                <h5 class="modal-title" id="modalGuides2Label">
+                    <span>Warehouse Procedures</span>
+                    <img src="./assets/ic-chevron-right.svg" alt="icon chevron right">
+                    Guides
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://drive.google.com/file/d/1iBeuiDZBPs4p_e7dgWeikCaJgRjzEF5k/view?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-cheat-sheet.svg" alt="ic app">
+                        </div>
+                        <p>Warehouse Cheat Sheet</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://docs.google.com/presentation/d/12wXYVyUFJF_4sa5prFjp-4md15NEK_tNznUYeWMv93M/edit?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-labelling.svg" alt="ic app">
+                        </div>
+                        <p>Labelling</p>
                     </a>
                 </div>
             </div>
@@ -678,6 +723,32 @@
                         <p>Accident Form</p>
                     </a>
                 </div>
+                <div class="box-notes">
+                    <p>
+                        To complete the accident form, log into iAuditor using <b>help@chill.com.au</b>, password = <b>@chill</b> 
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalInjury" tabindex="-1" aria-labelledby="modalAccidentLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAccidentLabel">CC</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box-notes">
+                    <p>
+                        To complete the Injury/Incident report form, log into iAuditor using <b>help@chill.com.au</b>, password = <b>@chill</b>
+                    </p>
+                </div>
+                <a href="https://app.safetyculture.io/login" target="_blank" class="btn btn-blue-primary">CREATE REPORT</a>
             </div>
           </div>
         </div>

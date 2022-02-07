@@ -13,6 +13,25 @@ html, body {
     padding-right: 12px;
 }
 
+.btn-blue-primary {
+    background: #1EA2ED;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.btn-blue-primary:hover {
+    color: #fff;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -31,6 +50,20 @@ html, body {
     text-align: center;
     color: #272F36;
     margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav h1 .ic-1 {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+}
+
+.nav h1 .ic-2 {
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
 }
 
 .nav .nav-brand {
@@ -179,6 +212,11 @@ html, body {
     z-index: 2;
 }
 
+#modalLiveTraffic .app-menu .img img {
+    width: 48px;
+    height: 48px;
+}
+
 .card .app-menu p,
 .modal .app-menu p {
     font-weight: 500;
@@ -250,14 +288,43 @@ html, body {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-evenly;
+    padding: 20px;
+}
+
+.modal-body .box-notes {
+    background: #F3F9F9;
+    border-radius: 8px;
+    padding: 13px 15px;
+    margin: 18px 0 20px;
+    display: block;
+    width: 100%;
+}
+
+#modalInjury .modal-body .box-notes {
+    margin: 0 0 30px;
+}
+
+.modal-body .box-notes p {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: #272F36;
+    margin: 0;
 }
 
 #modalAccident .modal-body,
 #modalHazard .modal-body,
-#modalGuides2 .modal-body {
+#modalGuides2 .modal-body,
+#modalInjury .modal-body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+#modalAccident .modal-body,
+#modalInjury .modal-body {
+    flex-wrap: wrap;
 }
 
 #modalRoadAssist .modal-body {
@@ -578,6 +645,9 @@ html, body {
     .modal-header .modal-title span {
         font-size: 13px;
         line-height: 15px;
+    }
+    #modalInjury .btn-blue-primary {
+        width: 100%;
     }
 }
 
