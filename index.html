@@ -24,35 +24,35 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="315845244934-u1jntitbrrs0mugf0ubg4p23siq2qr6j.apps.googleusercontent.com">
     <meta name="google-signin-hosted_domain"  content="chill.com.au">
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script> 
+    <script src="https://apis.google.com/js/platform.js" async defer></script> 
 
     <script>
+        var user=1;
+        function onSignIn(googleUser) {
+            // Useful data for your client-side scripts:
+            var profile = googleUser.getBasicProfile();
+            user = profile.getId();
+            console.log("-->", user);
+            if(user!=1){
+                var myUserEntity = {};
+                myUserEntity.Id = profile.getId();
+                myUserEntity.Name = profile.getName();
+                
+                //Store the entity object in sessionStorage where it will be accessible from all pages of your site.
+                sessionStorage.setItem('myUserEntity', JSON.stringify(myUserEntity));
+                document.location.href = '/ops/opsdashboard.html';
+            }
+        }
+
+
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-            console.log('User signed out.');
-            sessionStorage.clear();
-            // document.location.href = "/ops";
+            auth2.signOut().then(function () {
+            window.location = document.URL;
             });
         }
 
-        function onLoad() {
-        checkIfLoggedIn();  
-        gapi.load('auth2', function() {
-            gapi.auth2.init();
-            // console.log(gapi.auth2.getAuthInstance().isSignedIn.get());
-            // if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
-            //     document.location.href = "/dashboard";
-            // }
-        });
-        }
 
-        function checkIfLoggedIn(){
-        if(sessionStorage.getItem('myUserEntity') == null){
-            //Redirect to login page, no user entity available in sessionStorage
-            // window.location.href='/ops';
-        }
-        }
     </script>
 
     <!-- Navbar -->
@@ -69,9 +69,14 @@
         <div class="container">
             <h2>Welcome to Chill Dashboard</h2>
             <p>To login you need to have a <span>@chill.com.au</span> account</p>
-            <a href="dashboard.html" class="btn btn-login">
+            <!-- <a href="dashboard.html" class="btn btn-login">
                 <img src="./assets/ic-google-logo.svg" alt=""> Login with your account
-            </a>
+            </a> -->
+            <div class="g-signin2" 
+                style="margin-top: 4%;margin-left: 45%;line-height:20px;"
+                data-onsuccess="onSignIn"
+                data-theme="light">   
+            </div>
         </div>
     </section>
     <!-- Login Content END -->
