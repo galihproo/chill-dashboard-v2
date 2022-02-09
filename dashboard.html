@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill Operations Dashboard</title>
+    <link rel="icon" href="./assets/ic-chill.svg" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootsrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Google Sign In -- Edited by DL -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="315845244934-u1jntitbrrs0mugf0ubg4p23siq2qr6j.apps.googleusercontent.com">
+    <meta name="google-signin-hosted_domain"  content="chill.com.au">
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script> 
+
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+            console.log('User signed out.');
+            sessionStorage.clear();
+            // document.location.href = "/ops";
+            });
+        }
+
+        function onLoad() {
+        checkIfLoggedIn();  
+        gapi.load('auth2', function() {
+            gapi.auth2.init();
+            // console.log(gapi.auth2.getAuthInstance().isSignedIn.get());
+            // if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
+            //     document.location.href = "/dashboard";
+            // }
+        });
+        }
+
+        function checkIfLoggedIn(){
+        if(sessionStorage.getItem('myUserEntity') == null){
+            //Redirect to login page, no user entity available in sessionStorage
+            // window.location.href='/ops';
+        }
+        }
+    </script>
+
+    <div class="nav">
+        <div class="nav-brand">
+            <a href="http://www.chill.com.au/" target="_blank">
+                <img src="./assets/logo-chill.svg" alt="logo chill">
+                <h1 class="title-mobile">
+                    Chill Operations Dashboard
+                </h1>
+            </a>
+        </div>
+        <h1 class="title-desktop">
+            <img src="./assets/ic-procedures.svg" alt="ic app" class="ic-1">
+                Chill Operations Dashboard
+            <img src="./assets/ic-warehouse-procedures.svg" alt="ic app" class="ic-2">
+        </h1>
+        <div class="btn-logout" onclick="signOut();">LOGOUT</div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row row-primary">
+                <div class="col-12 col-lg-3 col-left">
+                    <h3 class="card-title">My Chill</h3>
+                    <div class="card">
+                        <div class="app-menu">
+                            <a href="#" data-toggle="modal" data-target="#modalDriver">
+                                <div class="img">
+                                    <img src="./assets/ic-procedures.svg" alt="ic app">
+                                </div>
+                                <p>Driver Procedures</p>
+                            </a>
+                        </div>
+                        <div class="app-menu">
+                            <a href="#" data-toggle="modal" data-target="#modalWarehouse">
+                                <div class="img">
+                                    <img src="./assets/ic-warehouse-procedures.svg" alt="ic app">
+                                </div>
+                                <p>Warehouse Procedures</p>
+                            </a>
+                        </div>
+                        <div class="app-menu">
+                            <a href="https://secure.employmenthero.com/users/sign_in" target="_blank">
+                                <div class="img">
+                                    <img src="./assets/ic-policies.svg" alt="ic app">
+                                </div>
+                                <p>Policies</p>
+                            </a>
+                        </div>
+                        <div class="app-menu">
+                            <a href="#" data-toggle="modal" data-target="#modalKnowledge">
+                                <div class="img">
+                                    <img src="./assets/ic-knowledge-bases.svg" alt="ic app">
+                                </div>
+                                <p>Knowledge Hub</p>
+                            </a>
+                        </div>
+                        <div class="app-menu">
+                            <a href="#" data-toggle="modal" data-target="#modalChain">
+                                <div class="img">
+                                    <img src="./assets/ic-chain-of-responsibility.svg" alt="ic app">
+                                </div>
+                                <p>Chain of Responsibility</p>
+                            </a>
+                        </div>
+                        <div class="app-menu">
+                            <a href="#" data-toggle="modal" data-target="#modalForms">
+                                <div class="img">
+                                    <img src="./assets/ic-forms.svg" alt="ic app">
+                                </div>
+                                <p>Forms</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 col-center">
+                    <div class="col-center-inner">
+                        <h3 class="card-title">Platforms</h3>
+                        <div class="card card-col-center">
+                            <div class="app-menu">
+                                <a href="https://mail.google.com/" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-gmail.svg" alt="ic app">
+                                    </div>
+                                    <p>Gmail</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://chill.au.deputy.com/login?noredirectonce=1" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-deputy.svg" alt="ic app">
+                                    </div>
+                                    <p>Deputy</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://secure.employmenthero.com/users/sign_in" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-employment.svg" alt="ic app">
+                                    </div>
+                                    <p>Employment Hero</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://chill.fleetsu.com/" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-fleetsu.svg" alt="ic app">
+                                    </div>
+                                    <p>Fleetsu</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://app.safetyculture.io/login" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-iauditor.svg" alt="ic app">
+                                    </div>
+                                    <p>iAuditor</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://app.process.st/login" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-process-street.svg" alt="ic app">
+                                    </div>
+                                    <p>Process Street</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://products.loginextsolutions.com/login" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-loginext.svg" alt="ic app">
+                                    </div>
+                                    <p>Loginext</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://app.cartoncloud.com.au/" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-carton-cloud.svg" alt="ic app">
+                                    </div>
+                                    <p>Carton Cloud</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-center-inner last">
+                        <h3 class="card-title">WHS</h3>
+                        <div class="card">
+                            <div class="app-menu">
+                                <a href="#" data-toggle="modal" data-target="#modalAccident">
+                                    <div class="img">
+                                        <img src="./assets/ic-accident.svg" alt="ic app">
+                                    </div>
+                                    <p>Accident</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://docs.google.com/document/d/1BYHCckGrvlEoPsM9n-tRg4O7SxzVYkDa64Nl-4158NE/edit?usp=sharing" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-breakdown.svg" alt="ic app">
+                                    </div>
+                                    <p>Breakdown</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="#" data-toggle="modal" data-target="#modalHazard">
+                                    <div class="img">
+                                        <img src="./assets/ic-hazard.svg" alt="ic app">
+                                    </div>
+                                    <p>Hazard</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://drive.google.com/drive/folders/0B8Ak0tWvVHksQXo0Ml8ycTlHMlE?resourcekey=0-SVTzqREcUjMFLY8ZJ5xO7w&usp=sharing" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-emergency-evacuation.svg" alt="ic app">
+                                    </div>
+                                    <p>Emergency/ Evacuation </p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="#" data-toggle="modal" data-target="#modalInjury">
+                                    <div class="img">
+                                        <img src="./assets/ic-report.svg" alt="ic app">
+                                    </div>
+                                    <p>Injury/Incident Report</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://app.safetyculture.com/templates/index" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-inspection-testing.svg" alt="ic app">
+                                    </div>
+                                    <p>Inspection & Testing</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://drive.google.com/drive/folders/0B5E7G2LlNhuTTC1uUnRQSW9GNXM?resourcekey=0-cNA1wx8hgHmox6_RUKd1HA&usp=sharing" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-msds.svg" alt="ic app">
+                                    </div>
+                                    <p>MSDS</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://drive.google.com/drive/folders/0B9KdQ8PlThnMM2hFdGgySndpa0k?resourcekey=0-3lL8dSG5Br-EvnIPgpHo9w&usp=sharing" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-safe-work-method.svg" alt="ic app">
+                                    </div>
+                                    <p>Safe Work Method</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5DbOKGLTZnO0rBoDSNUXzSCgUt9LkBVDmf3PS3gasOnzwTA/viewform?usp=sf_link" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-suggestion-box.svg" alt="ic app">
+                                    </div>
+                                    <p>Suggestion Box</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-right">
+                    <div class="col-right-inner">
+                        <h3 class="card-title">Doing Cool Things Better</h3>
+                        <div class="card card-col-right">
+                            <div class="app-menu">
+                                <a href="#" data-toggle="modal" data-target="#modalLiveTraffic">
+                                    <div class="img">
+                                        <img src="./assets/ic-live-traffic.svg" alt="ic app">
+                                    </div>
+                                    <p>Live Traffic</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-locations.svg" alt="ic app">
+                                    </div>
+                                    <p>Locations</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://www.wexinc.com/motorpass/motorpass-locations/" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-nearest-fuel.svg" alt="ic app">
+                                    </div>
+                                    <p>Nearest Fuel</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://www.onpallet.com/" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-pallet-loader-calculator.svg" alt="ic app">
+                                    </div>
+                                    <p>Pallet Loader Calculator</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="#" data-toggle="modal" data-target="#modalRoadAssist">
+                                    <div class="img">
+                                        <img src="./assets/ic-road-assistance.svg" alt="ic app">
+                                    </div>
+                                    <p>Road Assistance</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://apps.apple.com/au/app/truckwiz-australian-navigation/id1501734444" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-truck-wiz.svg" alt="ic app">
+                                    </div>
+                                    <p>Truck Wiz</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-right-inner last">
+                        <h3 class="card-title">Connect</h3>
+                        <div class="card">
+                            <div class="app-menu">
+                                <a href="https://www.instagram.com/chillptyltd/" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-instagram.svg" alt="ic app">
+                                    </div>
+                                    <p>Instagram</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://open.spotify.com/playlist/4yocyjmril6nJnqlFYV9n1?si=2e4a13bcd2f541b5" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-spotify.svg" alt="ic app">
+                                    </div>
+                                    <p>Spotify</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://www.youtube.com/user/chillonutube" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-youtube.svg" alt="ic app">
+                                    </div>
+                                    <p>Youtube</p>
+                                </a>
+                            </div>
+                            <div class="app-menu">
+                                <a href="https://chillcrew.workplace.com/" target="_blank">
+                                    <div class="img">
+                                        <img src="./assets/ic-workplace.svg" alt="ic app">
+                                    </div>
+                                    <p>Workplace</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalDriver" tabindex="-1" aria-labelledby="modalDriverLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalDriverLabel">Driver Procedures</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <img src="./assets/ic-close.svg" alt="close icon">
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://3990289.hs-sites.com/en/knowledge" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-faq.svg" alt="ic app">
+                        </div>
+                        <p>FAQ’s</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#" data-toggle="modal" data-target="#modalGuides" data-dismiss="modal" aria-label="Close">
+                        <div class="img">
+                            <img src="./assets/ic-guides.svg" alt="ic app">
+                        </div>
+                        <p>Guides</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://www.youtube.com/playlist?list=PLINFJPTwxtmsOZ0VyEkq4NE16uotW7wQD&disable_polymer=true" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-how-to-video.svg" alt="ic app">
+                        </div>
+                        <p>How to Videos</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://drive.google.com/drive/folders/1aoD47ipSf28bp4zaMaafZF4gwy5A3mht?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-sop.svg" alt="ic app">
+                        </div>
+                        <p>SOP’s</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGuides" tabindex="-1" aria-labelledby="modalGuidesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button class="back" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#modalDriver">
+                    <img class="icon" src="./assets/ic-back.svg" alt="icon back">
+                    <img class="hover" src="./assets/ic-back-hover.svg" alt="icon back hover">
+                </button>
+                <h5 class="modal-title" id="modalGuidesLabel">
+                    <span>Driver Procedures</span>
+                    <img src="./assets/ic-chevron-right.svg" alt="icon chevron right">
+                    Guides
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://drive.google.com/file/d/1iBeuiDZBPs4p_e7dgWeikCaJgRjzEF5k/view?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-cheat-sheet.svg" alt="ic app">
+                        </div>
+                        <p>Driver Cheat Sheet</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://drive.google.com/file/d/1z8HGqH07cu9kEaVqtmwp7tI32g6WoWVm/view?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-driver-day.svg" alt="ic app">
+                        </div>
+                        <p>Driver Day</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://docs.google.com/document/d/1QuAjP8XEdIBMlziq9tucZ2QUgF9bmlFXZQT7I1n730A/edit?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-driver-manual.svg" alt="ic app">
+                        </div>
+                        <p>Driver Manual</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://drive.google.com/drive/folders/1XPCYv1RAPQt608bZj36b_OtJ6CsoO4pi?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-covid.svg" alt="ic app">
+                        </div>
+                        <p>COVID 19</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://docs.google.com/presentation/d/12wXYVyUFJF_4sa5prFjp-4md15NEK_tNznUYeWMv93M/edit?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-labelling.svg" alt="ic app">
+                        </div>
+                        <p>Labelling</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://drive.google.com/file/d/1M7CS8R4c0GN9wWZ-ncoWSdcLJd77w3KW/view?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-history.svg" alt="ic app">
+                        </div>
+                        <p>Return Stock</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalWarehouse" tabindex="-1" aria-labelledby="modalWarehouseLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalWarehouseLabel">Warehouse Procedures</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://3990289.hs-sites.com/en/knowledge" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-faq.svg" alt="ic app">
+                        </div>
+                        <p>FAQ’s</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="#" data-toggle="modal" data-target="#modalGuides2" data-dismiss="modal" aria-label="Close">
+                        <div class="img">
+                            <img src="./assets/ic-guides.svg" alt="ic app">
+                        </div>
+                        <p>Guides</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://www.youtube.com/playlist?list=PLINFJPTwxtmsOZ0VyEkq4NE16uotW7wQD&disable_polymer=true" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-how-to-video.svg" alt="ic app">
+                        </div>
+                        <p>How To Videos</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://drive.google.com/drive/folders/1fHnQMz_uSbo78TkF07KSDYU-yW5vGZBH?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-sop.svg" alt="ic app">
+                        </div>
+                        <p>SOP’s</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGuides2" tabindex="-1" aria-labelledby="modalGuides2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button class="back" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#modalWarehouse">
+                    <img class="icon" src="./assets/ic-back.svg" alt="icon back">
+                    <img class="hover" src="./assets/ic-back-hover.svg" alt="icon back hover">
+                </button>
+                <h5 class="modal-title" id="modalGuides2Label">
+                    <span>Warehouse Procedures</span>
+                    <img src="./assets/ic-chevron-right.svg" alt="icon chevron right">
+                    Guides
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://drive.google.com/file/d/1yseTTye5zQ5fwoAZGrAEsRdSbhKDXzuf/view?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-cheat-sheet.svg" alt="ic app">
+                        </div>
+                        <p>Warehouse Cheat Sheet</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://docs.google.com/presentation/d/12wXYVyUFJF_4sa5prFjp-4md15NEK_tNznUYeWMv93M/edit?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-labelling.svg" alt="ic app">
+                        </div>
+                        <p>Labelling</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalKnowledge" tabindex="-1" aria-labelledby="modalKnowledgeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalKnowledgeLabel">Knowledge Hub</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://help.cartoncloud.com/kb2" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-carton-cloud.svg" alt="ic app">
+                        </div>
+                        <p>Carton Cloud</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://employmenthero.zendesk.com/hc/en-au" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-employment.svg" alt="ic app">
+                        </div>
+                        <p>Employment Hero</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://app.process.st/login" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-chill.svg" alt="ic app">
+                        </div>
+                        <p>Chill Knowledge</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="http://help.deputy.com/en/" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-deputy.svg" alt="ic app">
+                        </div>
+                        <p>Deputy</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://help.fleetsu.com/" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-fleetsu.svg" alt="ic app">
+                        </div>
+                        <p>Fleetsu</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://products.loginextsolutions.com/login" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-loginext.svg" alt="ic app">
+                        </div>
+                        <p>Loginext</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalChain" tabindex="-1" aria-labelledby="modalChainLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalChainLabel">Chain of Responsibility</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://docs.google.com/document/d/1tMZgKSzpyvzUTlJ9Vc9RCAS9b_xBipd4sEfGxkai7ko/edit?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-driver-responsibility.svg" alt="ic app">
+                        </div>
+                        <p>Driver Responsibility</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://docs.google.com/document/d/1cLlfVTOQZjk8cpxBd-B8Dmml6JhtTkS1LlJ8VYCEh5Q/edit?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-warehouse-procedures.svg" alt="ic app">
+                        </div>
+                        <p>Warehouse Responsibility</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://docs.google.com/presentation/d/181ONW4EymKqbustK71isPNdBzE2oelGPuPM6QHp7qtw/edit?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-load-distribution.svg" alt="ic app">
+                        </div>
+                        <p>Load Distribution</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalForms" tabindex="-1" aria-labelledby="modalFormsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFormsLabel">Forms</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://docs.google.com/document/d/1eSyhUyBQHVRAuM052w2RuC9pDVJ5JjaGcKoVUPUJwWI/edit?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-damage-to-goods.svg" alt="ic app">
+                        </div>
+                        <p>Damage to Goods</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://app.safetyculture.io/login" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-product-recall.svg" alt="ic app">
+                        </div>
+                        <p>Product Recall</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://chill.com.au/wp-content/uploads/2021/03/A4_Delivery_Address_Label_Chill_Locations_210322.pdf" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-shipping-labels.svg" alt="ic app">
+                        </div>
+                        <p>Shipping Labels</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://secure.employmenthero.com/users/sign_in" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-forms.svg" alt="ic app">
+                        </div>
+                        <p>Leave Form</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://secure.employmenthero.com/users/sign_in" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-expense-form.svg" alt="ic app">
+                        </div>
+                        <p>Expense Form</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAccident" tabindex="-1" aria-labelledby="modalAccidentLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAccidentLabel">Accident</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://drive.google.com/file/d/0B6eRw1h6JtqBU2pWUG1TNHRldlk/view?usp=sharing&resourcekey=0-WX9b-sdlOZjThZA7v01ZvA" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-policies.svg" alt="ic app">
+                        </div>
+                        <p>What To Do</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://app.safetyculture.com/templates/index" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-forms.svg" alt="ic app">
+                        </div>
+                        <p>Accident Form</p>
+                    </a>
+                </div>
+                <div class="box-notes">
+                    <p>
+                        To complete the accident form, log into iAuditor using <b>help@chill.com.au</b>, password = <b>@chill</b> 
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalInjury" tabindex="-1" aria-labelledby="modalAccidentLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAccidentLabel">Injury/Incident</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box-notes">
+                    <p>
+                        To complete the Injury/Incident report form, log into iAuditor using <b>help@chill.com.au</b>, password = <b>@chill</b>
+                    </p>
+                </div>
+                <a href="https://app.safetyculture.com/templates/index" target="_blank" class="btn btn-blue-primary">CREATE REPORT</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalHazard" tabindex="-1" aria-labelledby="modalHazardLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalHazardLabel">Hazard</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://drive.google.com/file/d/1_GKC-qnv-cQyWGP5Lx-o9EI0q3OegrM3/view?usp=sharing" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-identification.svg" alt="ic app">
+                        </div>
+                        <p>Identification</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://app.safetyculture.com/templates/index" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-report.svg" alt="ic app">
+                        </div>
+                        <p>Report</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalRoadAssist" tabindex="-1" aria-labelledby="modalRoadAssistLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalRoadAssistLabel">Road Assistance</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Call HQ first to get advice on next steps</p>
+                <div class="phone-item">
+                    <h3>Chill HQ</h3>
+                    <a href="tel:1300932445" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1300 932 445
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Fuso</h3>
+                    <a href="tel:1300426708" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1300 426 708
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Iveco</h3>
+                    <a href="tel:1800827747" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1800 827 747
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Isuzu</h3>
+                    <a href="tel:1800883883" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1800 883 883
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Mercedes</h3>
+                    <a href="tel:1800807700" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1800 807 700
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>Ford</h3>
+                    <a href="tel:1800133673" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        1800 133 673
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>NRMA</h3>
+                    <a href="tel:131122" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        13 11 22
+                    </a>
+                </div>
+                <div class="phone-item">
+                    <h3>RACV</h3>
+                    <a href="tel:13 11 11" class="number">
+                        <img src="./assets/ic-phone.svg" alt="icon phone">
+                        13 11 11
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalLiveTraffic" tabindex="-1" aria-labelledby="modalLiveTrafficLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLiveTrafficLabel">Live Traffic</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/ic-close.svg" alt="close icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="app-menu">
+                    <a href="https://qldtraffic.qld.gov.au/" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-qld.svg" alt="ic app">
+                        </div>
+                        <p>QLD</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://www.livetraffic.com/" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-nsw.svg" alt="ic app">
+                        </div>
+                        <p>NSW</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://www.perthnow.com.au/news/perth-traffic" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-wa.svg" alt="ic app">
+                        </div>
+                        <p>WA</p>
+                    </a>
+                </div>
+                <div class="app-menu">
+                    <a href="https://traffic.vicroads.vic.gov.au/" target="_blank">
+                        <div class="img">
+                            <img src="./assets/ic-vic.svg" alt="ic app">
+                        </div>
+                        <p>VIC</p>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script>
+        $('.modal').on('show.bs.modal', function (e) {
+            $('body').addClass("modal-open");
+        }).on('hide.bs.modal', function (e) {
+            $('body').removeClass("modal-open");
+        })
+    </script>
+</body>
+</html>
