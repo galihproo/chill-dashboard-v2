@@ -14,10 +14,31 @@ html, body {
     position: relative;
 }
 
+.login-page .navbar {
+    padding: 24px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+ .login-page .navbar .navbar-brand {
+    font-size: 24px;
+    line-height: 29px;
+    color: #000;
+    font-weight: 700;
+}
+
+ .login-page .navbar .navbar-brand img {
+    margin-right: 60px;
+}
+
 .login-page .content {
     height: 100vh;
     display: flex;
     align-items: center;
+    background-color: #FFFFFF;
 }
 
 .login-page .content h2 {
